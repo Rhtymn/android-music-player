@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string-array name="music_title">
+        <item>Lagu A</item>
+        <item>Lagu B</item>
+        <item>Lagu C</item>
+        <item>Lagu D</item>
+    </string-array>
+
+    <string-array name="music_duration">
+        <item>3.42</item>
+        <item>3.45</item>
+        <item>3.47</item>
+        <item>3.50</item>
+    </string-array>
+</resources>
