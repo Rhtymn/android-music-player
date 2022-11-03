@@ -23,11 +23,13 @@ public class MusicDetailActivity extends AppCompatActivity {
 
         musicTitle = findViewById(R.id.detailMusicTitle);
         musicDuration = findViewById(R.id.detailMusicDuration);
-        player = MediaPlayer.create(this, R.raw.ts_daylight);
 
         Button playBtn = findViewById(R.id.btn_play);
         Button stopBtn = findViewById(R.id.btn_stop);
         Button pauseBtn = findViewById(R.id.btn_pause);
+
+        getData();
+        setData();
 
         playBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,8 +51,6 @@ public class MusicDetailActivity extends AppCompatActivity {
                 pause(view);
             }
         });
-        getData();
-        setData();
     }
 
     private void getData(){
@@ -70,7 +70,7 @@ public class MusicDetailActivity extends AppCompatActivity {
 
     public void play(View view) {
         if (player == null) {
-            player = MediaPlayer.create(this, R.raw.ts_daylight);
+            player = MediaPlayer.create(this, musicFileData);
             player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mediaPlayer) {
