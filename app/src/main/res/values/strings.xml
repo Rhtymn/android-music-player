@@ -2,10 +2,10 @@
     <string name="app_name">My Application</string>
 
     <string-array name="music_title">
-        <item>Lagu A</item>
-        <item>Lagu B</item>
-        <item>Lagu C</item>
-        <item>Lagu D</item>
+        <item>Taylor Swift - Daylight</item>
+        <item>Taylor Swift - Gorgeous</item>
+        <item>Taylor Swift - Love Story</item>
+        <item>Taylor Swift - Style</item>
     </string-array>
 
     <string-array name="music_duration">

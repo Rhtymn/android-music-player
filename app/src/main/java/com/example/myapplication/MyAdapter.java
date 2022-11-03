@@ -14,12 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     String musicTitleData[], musicDurationData[];
+    int musicFileData[];
     Context context;
 
-    public MyAdapter(Context ct, String musicTitle[], String musicDuration[]) {
+    public MyAdapter(Context ct, String musicTitle[], String musicDuration[], int musicFile[]) {
         context = ct;
         musicTitleData = musicTitle;
         musicDurationData = musicDuration;
+        musicFileData = musicFile;
     }
 
     @NonNull
@@ -41,6 +43,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 Intent intent = new Intent(context, MusicDetailActivity.class);
                 intent.putExtra("musicTitle", musicTitleData[position]);
                 intent.putExtra("musicDuration", musicDurationData[position]);
+                intent.putExtra("musicFile", musicFileData[position]);
                 context.startActivity(intent);
             }
         });
