@@ -2,16 +2,14 @@
     <string name="app_name">My Application</string>
 
     <string-array name="music_title">
-        <item>Taylor Swift - Daylight</item>
-        <item>Taylor Swift - Gorgeous</item>
-        <item>Taylor Swift - Love Story</item>
-        <item>Taylor Swift - Style</item>
+        <item>Unisono 1 Stanza</item>
+        <item>Piano 1 Stanza</item>
+        <item>Simphoni 1 Stanza</item>
     </string-array>
 
     <string-array name="music_duration">
         <item>3.42</item>
         <item>3.45</item>
         <item>3.47</item>
-        <item>3.50</item>
     </string-array>
 </resources>

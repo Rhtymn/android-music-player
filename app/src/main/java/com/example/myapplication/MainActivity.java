@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     String musicTitle[], musicDuration[];
-    int musicFile[] = {R.raw.ts_daylight, R.raw.ts_gorgeous, R.raw.ts_love_story, R.raw.ts_style};
+    int musicFile[] = {R.raw.unisono_1_stanza, R.raw.piano_1_stanza, R.raw.simphoni_1_stanza};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
