@@ -26,7 +26,6 @@ public class MusicDetailActivity extends AppCompatActivity {
 
         Button playBtn = findViewById(R.id.btn_play);
         Button stopBtn = findViewById(R.id.btn_stop);
-        Button pauseBtn = findViewById(R.id.btn_pause);
 
         getData();
         setData();
@@ -46,44 +45,6 @@ public class MusicDetailActivity extends AppCompatActivity {
         musicTitle.setText(musicTitleData);
         musicDuration.setText(musicDurationData);
     }
-
-    public void play(View view) {
-        if (player == null) {
-            player = MediaPlayer.create(this, musicFileData);
-            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    stopPlayer();
-                }
-            });
-        }
-
-        player.start();
-    }
-
-    public void pause(View view) {
-        if (player != null) {
-            player.pause();
-        }
-    }
-
-    public void stop(View view) {
-        stopPlayer();
-    }
-
-    private void stopPlayer() {
-        if (player != null) {
-            player.release();
-            player = null;
-            Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        stopPlayer();
-//    }
 
     public void playButtonHandler(View view){
         Intent serviceIntent = new Intent(this, SoundService.class);
