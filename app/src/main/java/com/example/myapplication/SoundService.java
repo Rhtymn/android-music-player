@@ -15,24 +15,28 @@ public class SoundService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+    public static int currentMusic = 0;
 
     public int onStartCommand(Intent intent, int flags, int startId) {
         int musicFile = intent.getIntExtra("musicFile", 1);
         if (musicPlayer == null) {
             setPlayingSong(musicFile);
-        } else if (musicPlayer.isPlaying()) {
+            currentMusic = musicFile;
+            Toast.makeText(this, "Music Service started", Toast.LENGTH_LONG).show();
+        } else if (musicPlayer.isPlaying() && currentMusic != musicFile) {
             stopPlayer();
             setPlayingSong(musicFile);
+            currentMusic = musicFile;
+            Toast.makeText(this, "Music Service started", Toast.LENGTH_LONG).show();
         }
-
         musicPlayer.start();
-        Toast.makeText(this, "Music Service started", Toast.LENGTH_LONG).show();
         return START_STICKY;
     }
 
     public void onDestroy() {
         super.onDestroy();
         stopPlayer();
+        currentMusic = 0;
         Toast.makeText(this, "Music service destroyed", Toast.LENGTH_LONG).show();
     }
 

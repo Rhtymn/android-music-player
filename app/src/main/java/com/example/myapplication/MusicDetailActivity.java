@@ -52,5 +52,9 @@ public class MusicDetailActivity extends AppCompatActivity {
         startService(serviceIntent);
     }
 
-    public void stopButtonHandler(View view){ stopService(new Intent(this, SoundService.class)); }
+    public void stopButtonHandler(View view){
+        if (SoundService.currentMusic == musicFileData) {
+            stopService(new Intent(this, SoundService.class));
+        }
+    }
 }
