@@ -30,27 +30,6 @@ public class MusicDetailActivity extends AppCompatActivity {
 
         getData();
         setData();
-
-        playBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                play(view);
-            }
-        });
-
-        stopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stop(view);
-            }
-        });
-
-        pauseBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pause(view);
-            }
-        });
     }
 
     private void getData(){
@@ -100,9 +79,17 @@ public class MusicDetailActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        stopPlayer();
+//    @Override
+//    protected void onStop() {
+//        super.onStop();
+//        stopPlayer();
+//    }
+
+    public void playButtonHandler(View view){
+        Intent serviceIntent = new Intent(this, SoundService.class);
+        serviceIntent.putExtra("musicFile", musicFileData);
+        startService(serviceIntent);
     }
+
+    public void stopButtonHandler(View view){ stopService(new Intent(this, SoundService.class)); }
 }

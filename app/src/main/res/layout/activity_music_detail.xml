@@ -25,6 +25,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginTop="106dp"
         android:text="Play"
+        android:onClick="playButtonHandler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailMusicTitle" />
 
@@ -47,6 +48,7 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="36dp"
         android:text="Stop"
+        android:onClick="stopButtonHandler"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailMusicTitle" />
 
@@ -56,6 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:text="Pause"
+        android:onClick="pauseButtonHandler"
         app:layout_constraintEnd_toStartOf="@+id/btn_stop"
         app:layout_constraintStart_toEndOf="@+id/btn_play"
         app:layout_constraintTop_toBottomOf="@+id/detailMusicDuration" />
